@@ -33,7 +33,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+				@* @foreach (var obj in Model.OrderBy(u => u.DisplayOrder)) *@
+				@foreach (var obj in Model)
 				{
 					<tr>
 						<td>
