@@ -1,6 +1,14 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+}
+body {
+    padding-top: 60px; /* Adjust according to your header height */
+}
 a.navbar-brand {
     white-space: normal;
     text-align: center;
@@ -71,7 +79,7 @@ html {
 }
 
 .bg-primary {
-    background-color: #192E2F !important;
+    background-color: #161A30 !important;
 }
 
 .bg-secondary {
@@ -85,7 +93,7 @@ bg-success {
 
 
 .card {
-    border-color: #425F4B !important;
+    border-color: #161A30 !important;
 }
 
 
@@ -103,7 +111,7 @@ bg-success {
 
     .btn-outline-primary:hover {
         color: #fff;
-        background-color: #192E2F;
+        background-color: #161A30;
         border-color: #192E2F;
     }
 
@@ -232,7 +240,7 @@ bg-success {
 
 .btn-primary {
     color: #fff;
-    background-color: #192E2F;
+    background-color: #161A30;
     border-color: #192E2F;
 }
 
@@ -240,7 +248,7 @@ bg-success {
 
     .btn-primary:hover {
         color: #fff;
-        background-color: #445f5e;
+        background-color: #56585e;
         border-color: #445f5e;
     }
 
@@ -248,7 +256,7 @@ bg-success {
 
     .btn-check:focus + .btn-primary, .btn-primary:focus {
         color: #fff;
-        background-color: #445f5e;
+        background-color: #4a4f67;
         border-color: #445f5e;
         box-shadow: 0 0 0 0.25rem rgba(60, 60, 60, 0.5);
     }
@@ -299,9 +307,9 @@ bg-success {
     .btn-check:focus + .btn-danger, .btn-danger:focus {
         color: #fff;
         background-color: #d9534f;
-        ;
+        
         border-color: #d9534f;
-        ;
+        
         box-shadow: 0 0 0 0.25rem rgba(223, 109, 105, 0.5);
     }
 

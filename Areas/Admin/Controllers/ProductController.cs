@@ -39,7 +39,7 @@ namespace WebApplicationForWebSystem.Areas.Admin.Controllers
 				}),
 				Product = new Product()
 			};
-			if (id == null || id == 0)
+            if (id == null || id == 0)
 			{
 				//create
 				return View(productVM);
@@ -83,7 +83,11 @@ namespace WebApplicationForWebSystem.Areas.Admin.Controllers
 					productVM.Product.ImageUrl = @"\images\product\" + fileName;
 				}
 
-				if (productVM.Product.Id == 0)
+                if (!productVM.Product.Price50.HasValue) productVM.Product.Price50 = 1;
+                if (!productVM.Product.Price100.HasValue) productVM.Product.Price100 = 1;
+                if (!productVM.Product.Price.HasValue) productVM.Product.Price = 1;
+
+                if (productVM.Product.Id == 0)
 				{
 					_unitOfWork.Product.Add(productVM.Product);
 				}

@@ -38,11 +38,15 @@ namespace WebApplicationForWebSystem.Areas.Admin.Controllers
 			{
 				ModelState.AddModelError("", "test is an invalid entry");
 			}*/
+            if (!obj.DisplayOrder.HasValue)
+            {
+                obj.DisplayOrder = 1; // Set a default value if null
+            }
             if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Add(obj);
                 _unitOfWork.Save();
-                TempData["success"] = "Created Category Succesfully";
+                TempData["success"] = "Program Added Succesfully";
                 return RedirectToAction("Index");
             }
             return View();
@@ -66,20 +70,23 @@ namespace WebApplicationForWebSystem.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(Category obj)
         {
-            if (obj.Name == obj.DisplayOrder.ToString())
+            if (obj.Name == obj.DisplayOrder?.ToString())
             {
                 ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the Name.");
+            }
+            if (!obj.DisplayOrder.HasValue)
+            {
+                obj.DisplayOrder = 1; // Set a default value if null
             }
             if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Update(obj);
                 _unitOfWork.Save();
-                TempData["success"] = "Category updated successfully";
+                TempData["success"] = "Program updated successfully";
                 return RedirectToAction("Index");
             }
             return View(obj);
         }
-
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)
@@ -102,9 +109,10 @@ namespace WebApplicationForWebSystem.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            _unitOfWork.Category.Remove(obj);
+
+			_unitOfWork.Category.Remove(obj);
             _unitOfWork.Save();
-            TempData["success"] = "Category deleted successfully";
+            TempData["success"] = "Program deleted successfully";
             return RedirectToAction("Index");
         }
     }
