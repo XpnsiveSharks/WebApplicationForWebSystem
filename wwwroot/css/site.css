@@ -1,5 +1,58 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+.container{
+    width:100%;
+    min-height: 100vh;
+}
+.flex-2{
+    width:80%;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin:auto;
+    padding:100px 0px;
+}
+.image{
+    width:100%;
+}
+.image img{
+    width:100%;
+    height:auto;
+}
+.content{
+    width:60%;
+}
+.content h1{
+    color:#008060;
+    font-size:40px;
+}
+.content h1 {
+    color: #2a2a2a;
+    margin-top:30px;
+    font-size: 40px;
+}    
+.content p {
+    font-size:22px;
+    line-height:1.5;
+    color: #7e7e7e;
+    margin-top:30px;
+}
+
+
+.custom-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* Adjust the weight as needed */
+    font-size: 1.5rem; /* Adjust the size as needed */
+}
+.sharkcustom-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sharkcustom-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 header {
     position: fixed;
     top: 0;
